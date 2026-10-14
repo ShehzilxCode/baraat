@@ -65,23 +65,21 @@ section{position:relative;max-width:1000px;margin:0 auto;padding:90px 22px;text-
 .title::after{content:"";display:block;width:90px;height:2px;margin:16px auto 0;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
 .title.light{color:var(--gold-soft)}
 
-/* lanterns */
-.lanterns{position:fixed;top:0;left:0;right:0;height:0;z-index:30;pointer-events:none}
-.lantern{position:absolute;top:-8px;width:34px;height:64px;transform-origin:top center;animation:swing 4s ease-in-out infinite}
-.lantern::before{content:"";position:absolute;left:50%;top:-40px;width:1.5px;height:44px;background:var(--gold)}
-.lantern::after{content:"";position:absolute;left:0;top:0;width:34px;height:56px;border-radius:40% 40% 46% 46%/30% 30% 70% 70%;
-  background:linear-gradient(90deg,#8d0c20,#e03550 50%,#8d0c20);
-  border-top:5px solid var(--gold);border-bottom:6px solid var(--gold);
-  box-shadow:0 0 28px rgba(255,170,60,.85),inset 0 0 14px rgba(255,210,120,.8)}
-.l1{left:6%;animation-delay:0s}.l2{left:26%;animation-delay:-1s;height:54px}.l3{left:50%;animation-delay:-2s}
-.l4{left:74%;animation-delay:-3s}.l5{left:93%;animation-delay:-1.5s}
-@keyframes swing{0%,100%{transform:rotate(7deg)}50%{transform:rotate(-7deg)}}
+/* rose and jasmine side vines */
+.floral-frame{position:fixed;inset:0;z-index:28;pointer-events:none;overflow:hidden}
+.floral-vine{position:absolute;top:-35px;bottom:-35px;width:74px;opacity:.9;filter:drop-shadow(0 5px 8px rgba(48,4,12,.22));animation:vineSway 7s ease-in-out infinite;transform-origin:top center}
+.floral-vine.left{left:-24px}.floral-vine.right{right:-24px;transform:scaleX(-1);animation-direction:reverse}
+.floral-vine::before{content:"";position:absolute;left:36px;top:0;bottom:0;width:4px;border-radius:50%;background:linear-gradient(90deg,#375429,#82924c,#375429);transform:rotate(1.5deg)}
+.floral-vine i{position:absolute;left:8px;width:58px;height:58px;border-radius:50%;background:radial-gradient(circle,#f2c45f 0 8%,#fff8ed 9% 20%,#b51230 21% 39%,#e14b62 40% 54%,#76091c 55% 61%,transparent 62%);box-shadow:19px 27px 0 -16px #fff8ea,-13px 46px 0 -18px #fff8ea}
+.floral-vine i::after{content:"";position:absolute;left:42px;top:40px;width:35px;height:18px;border-radius:100% 0 100% 0;background:linear-gradient(135deg,#8da35a,#3e653a);box-shadow:-37px 30px #607f43;transform:rotate(-18deg)}
+.floral-vine i:nth-child(1){top:3%;transform:scale(.78)}.floral-vine i:nth-child(2){top:23%;left:20px;transform:scale(.55)}.floral-vine i:nth-child(3){top:44%;transform:scale(.72)}.floral-vine i:nth-child(4){top:66%;left:20px;transform:scale(.55)}.floral-vine i:nth-child(5){top:86%;transform:scale(.78)}
+@keyframes vineSway{50%{translate:0 7px;rotate:1.5deg}}
 
 /* garland */
 .garland{position:absolute;top:0;left:0;right:0;height:46px;z-index:5;
   background:
-   radial-gradient(circle at 12px 18px,#ffb300 0 7px,#e47800 8px 9px,transparent 10px) 0 0/24px 36px repeat-x,
-   radial-gradient(circle at 24px 28px,#ff8a00 0 6px,#d46a00 7px 8px,transparent 9px) 0 0/24px 36px repeat-x;
+   radial-gradient(circle at 12px 17px,#f3ca68 0 3px,#fff7e9 4px 7px,#b51230 8px 12px,#6f0819 13px 15px,transparent 16px) 0 0/42px 42px repeat-x,
+   radial-gradient(ellipse at 32px 30px,#76904c 0 8px,#3f6639 9px 11px,transparent 12px) 0 0/42px 42px repeat-x;
   animation:garSway 6s ease-in-out infinite;transform-origin:top;filter:drop-shadow(0 4px 4px rgba(0,0,0,.3))}
 .garland.low{position:relative;top:auto;margin-bottom:26px}
 @keyframes garSway{50%{transform:skewX(1.2deg)}}
@@ -142,7 +140,10 @@ section{position:relative;max-width:1000px;margin:0 auto;padding:90px 22px;text-
 .cinematic figcaption strong{display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(1.7rem,7vw,2.5rem);line-height:1.12;font-weight:600}
 
 /* dhol march */
-.march{padding:50px 22px}
+.march{padding:58px 22px;overflow:hidden;background:radial-gradient(circle at 50% 50%,#fffdf8,transparent 65%)}
+.march::before,.march::after{content:"";position:absolute;top:50%;width:115px;height:180px;background:radial-gradient(circle at 50% 16%,#f2c45f 0 5px,#b51230 6px 18px,#fff4e7 19px 25px,transparent 26px),linear-gradient(78deg,transparent 47%,#59753d 48% 51%,transparent 52%);opacity:.72;transform:translateY(-50%) rotate(-16deg)}
+.march::before{left:-35px}.march::after{right:-35px;transform:translateY(-50%) scaleX(-1) rotate(-16deg)}
+.march>*{position:relative;z-index:1}
 .dhol svg{width:210px;margin:0 auto;display:block;animation:beat .6s ease-in-out infinite alternate;transform-origin:center}
 @keyframes beat{to{transform:scale(1.08) rotate(-2deg)}}
 .dhol .skin{fill:#f2dcae;stroke:var(--gold);stroke-width:3}
@@ -154,6 +155,7 @@ section{position:relative;max-width:1000px;margin:0 auto;padding:90px 22px;text-
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
 .tile{padding:38px 22px;border-radius:6px;position:relative;transition:transform .5s var(--ease),box-shadow .5s;border:2px solid var(--gold)}
 .tile::before{content:"";position:absolute;inset:7px;border:1px solid currentColor;opacity:.35;pointer-events:none}
+.tile::after{content:"";position:absolute;right:10px;top:10px;width:48px;height:48px;border-radius:50%;background:radial-gradient(circle,#e7bd5d 0 7%,#fff8ec 8% 19%,#b51230 20% 39%,#e34c63 40% 51%,transparent 52%);opacity:.72;transform:rotate(12deg);pointer-events:none}
 .tile.red{background:linear-gradient(160deg,var(--red),var(--red-deep));color:#fff}
 .tile.white{background:#fff;color:var(--red-deep)}
 .tile:hover{transform:translateY(-10px);box-shadow:0 24px 40px rgba(94,6,21,.35)}
@@ -212,6 +214,7 @@ footer .pin{font-size:2.8rem;color:var(--red)}
   .timeline{padding-left:38px}
   .timeline li::before{left:-33px}
   .cinematic{width:calc(100% - 28px);margin-block:22px 64px}
+  .floral-vine{width:48px;opacity:.62}.floral-vine.left{left:-29px}.floral-vine.right{right:-29px}.floral-vine::before{left:28px}.floral-vine i{left:7px;width:42px;height:42px}
 }
 @media (max-height:620px){#intro{gap:9px}.envelope{width:min(66vw,280px)}.intro-label{margin-top:2px}.intro-flowers{opacity:.45}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
