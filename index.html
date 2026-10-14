@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Baraat Invitation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Pinyon+Script&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="locked">
+
+<canvas id="fx" aria-hidden="true"></canvas>
+
+<!-- SHARED ENVELOPE INTRO -->
+<section id="intro" class="invitation-intro" aria-label="Baraat invitation cover">
+  <div class="intro-aura" aria-hidden="true"></div>
+  <div class="intro-flowers flower-left" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
+  <div class="intro-flowers flower-right" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
+  <button class="envelope" id="envelope" type="button" aria-label="Open Baraat invitation">
+    <span class="env-back"></span>
+    <span class="env-letter">
+      <small>You are invited to the</small>
+      <strong>Baraat</strong>
+      <em><span id="mono-b">B</span> &amp; <span id="mono-g">G</span></em>
+    </span>
+    <span class="env-front"></span>
+    <span class="env-flap"></span>
+    <span class="env-seal" aria-hidden="true">&#10087;</span>
+  </button>
+  <p class="intro-label">A wedding invitation</p>
+  <p class="tap-hint">Tap the seal to open</p>
+</section>
+
+<main id="card" class="hidden">
+
+  <!-- hanging lanterns + bunting -->
+  <div class="lanterns" aria-hidden="true">
+    <div class="lantern l1"></div><div class="lantern l2"></div><div class="lantern l3"></div>
+    <div class="lantern l4"></div><div class="lantern l5"></div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="garland" aria-hidden="true"></div>
+    <div class="split">
+      <div class="half bride">
+        <div class="jali"></div>
+        <p class="tag">The Bride</p>
+        <h1 class="name pin" id="n-bride"></h1>
+        <p class="fam" id="p-bride"></p>
+      </div>
+      <div class="knot" aria-hidden="true">
+        <svg viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="46" class="ring-o"/>
+          <circle cx="50" cy="50" r="38" class="ring-i"/>
+          <path d="M50 22l7 18 19 1-15 12 5 19-16-11-16 11 5-19-15-12 19-1z"/>
+        </svg>
+      </div>
+      <div class="half groom">
+        <div class="jali dark"></div>
+        <p class="tag">The Groom</p>
+        <h1 class="name pin" id="n-groom"></h1>
+        <p class="fam" id="p-groom"></p>
+      </div>
+    </div>
+
+    <div class="banner reveal">
+      <p class="arabic">بسم الله الرحمن الرحيم</p>
+      <p class="invite-line">Request the pleasure of your company at the</p>
+      <h2 class="cin big">Baraat Celebration</h2>
+      <div class="ornament"><i></i><b></b><i></i></div>
+      <p class="date" id="date-line"></p>
+    </div>
+    <div class="scroll-cue" aria-hidden="true"><span></span></div>
+  </section>
+
+  <!-- CINEMATIC CELEBRATION IMAGE -->
+  <figure class="cinematic reveal">
+    <img src="assets/celebration.webp" alt="Red bridal attire and an ivory groom sherwani arranged with wedding flowers and a dhol" loading="lazy" decoding="async">
+    <figcaption><span>Red, ivory &amp; gold</span><strong>Where two families become one</strong></figcaption>
+  </figure>
+
+  <!-- DHOL STRIP -->
+  <section class="march reveal">
+    <div class="dhol" aria-hidden="true">
+      <svg viewBox="0 0 200 120">
+        <ellipse cx="30" cy="60" rx="14" ry="42" class="skin"/>
+        <ellipse cx="170" cy="60" rx="14" ry="42" class="skin"/>
+        <path d="M30 18 Q100 4 170 18 L170 102 Q100 116 30 102z" class="body"/>
+        <g class="ropes"><path d="M40 20l20 80M70 14l20 90M100 12l0 96M130 14l-20 90M160 20l-20 80"/></g>
+      </svg>
+    </div>
+    <p class="march-text">The groom arrives with music, dance and joy.<br>Come celebrate the procession with us.</p>
+  </section>
+
+  <!-- DETAILS -->
+  <section class="details">
+    <h3 class="title reveal">Event Details</h3>
+    <div class="grid">
+      <article class="tile reveal red">
+        <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div>
+        <h4>Date</h4><p id="d-date"></p>
+      </article>
+      <article class="tile reveal white">
+        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h4>Baraat Arrival</h4><p id="d-time"></p>
+      </article>
+      <article class="tile reveal red">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
+        <h4>Venue</h4><p id="d-venue"></p><small id="d-address"></small>
+      </article>
+    </div>
+    <a id="map-btn" class="btn outline reveal" target="_blank" rel="noopener">Get Directions</a>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="timeline-wrap">
+    <h3 class="title reveal">The Evening</h3>
+    <ol class="timeline" id="timeline"></ol>
+  </section>
+
+  <!-- COUNTDOWN -->
+  <section class="count reveal">
+    <h3 class="title light">The Procession Begins In</h3>
+    <div class="timer">
+      <div><b id="c-d">00</b><span>Days</span></div>
+      <div><b id="c-h">00</b><span>Hours</span></div>
+      <div><b id="c-m">00</b><span>Min</span></div>
+      <div><b id="c-s">00</b><span>Sec</span></div>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section class="rsvp reveal">
+    <p class="pin big">Dance with us!</p>
+    <p class="note" id="rsvp-note"></p>
+    <a id="rsvp-btn" class="btn" target="_blank" rel="noopener">RSVP on WhatsApp</a>
+    <button id="celebrate" class="btn outline">&#127878; Celebrate</button>
+  </section>
+
+  <footer>
+    <div class="garland low" aria-hidden="true"></div>
+    <p class="pin" id="foot-names"></p>
+  </footer>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
