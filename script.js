@@ -10,7 +10,7 @@ const INVITE = {
   dateText: "Friday, 13th November 2026",
   timeText: "6:00 PM",
   venue: "Shayan Banquet & Lawn",
-  address: "PAF Plot #2, Shaheed-e-Millat Flyover, Baloch Colony, Karachi-75350. Cell: 0300-2033224",
+  address: "PAF Plot #2, Shaheed-e-Millat Flyover, Baloch Colony, Karachi-75350.",
   mapLink: "https://maps.app.goo.gl/XuwAqfj7vmtuDHSUA?g_st=aw",
   rsvpNote: "Kindly let us know you're joining the baraat",
   rsvpWhatsApp: "923000000000",
