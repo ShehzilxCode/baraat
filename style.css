@@ -118,14 +118,26 @@ section{position:relative;max-width:1000px;margin:0 auto;padding:90px 22px;text-
 @keyframes slideR{from{transform:translateX(100%)}}
 
 /* hero floral corner decorations */
-.hero-corner{position:absolute;pointer-events:none;z-index:3;overflow:visible}
-.hero-corner-tl{top:0;left:0;width:clamp(120px,28vw,210px);height:clamp(120px,28vw,210px);animation:cornerFadeIn 1.8s .6s var(--ease) both}
-.hero-corner-br{bottom:0;right:0;width:clamp(80px,18vw,140px);height:clamp(80px,18vw,140px);transform:rotate(180deg);animation:cornerFadeIn 1.8s .9s var(--ease) both}
-.hero-corner-tr{top:0;right:0;width:clamp(120px,28vw,210px);height:clamp(120px,28vw,210px);animation:cornerFadeIn 1.8s .7s var(--ease) both}
-.hero-corner-bl{bottom:0;left:0;width:clamp(80px,18vw,140px);height:clamp(80px,18vw,140px);transform:rotate(180deg);animation:cornerFadeIn 1.8s 1s var(--ease) both}
-@keyframes cornerFadeIn{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:none}}
-.hero-corner-br{transform-origin:bottom right}
-.hero-corner-bl{transform-origin:bottom left}
+.hf{position:absolute;pointer-events:none;z-index:3;overflow:visible}
+/* bride half — white/blush/gold florals */
+.half.bride .hf-tl{top:0;left:0;width:clamp(160px,36vw,300px);height:clamp(180px,40vw,340px);animation:hfIn 1.8s .5s var(--ease) both}
+.half.bride .hf-br{bottom:0;right:0;width:clamp(110px,22vw,230px);height:clamp(100px,20vw,210px);animation:hfIn 1.8s .75s var(--ease) both}
+.half.bride .hf-bl{bottom:0;left:0;width:clamp(100px,20vw,210px);height:clamp(85px,17vw,180px);animation:hfIn 1.8s .95s var(--ease) both}
+.half.bride .hf-tr{top:0;right:0;width:clamp(65px,13vw,138px);height:100%;animation:hfIn 1.8s .65s var(--ease) both}
+/* groom half — deep red/gold florals */
+.half.groom .hf-tr{top:0;right:0;width:clamp(160px,36vw,300px);height:clamp(180px,40vw,340px);animation:hfIn 1.8s .55s var(--ease) both}
+.half.groom .hf-bl{bottom:0;left:0;width:clamp(110px,22vw,230px);height:clamp(100px,20vw,210px);animation:hfIn 1.8s .8s var(--ease) both}
+.half.groom .hf-br{bottom:0;right:0;width:clamp(100px,20vw,210px);height:clamp(85px,17vw,180px);animation:hfIn 1.8s 1s var(--ease) both}
+.half.groom .hf-tl{top:0;left:0;width:clamp(65px,13vw,138px);height:100%;animation:hfIn 1.8s .7s var(--ease) both}
+@keyframes hfIn{from{opacity:0;transform:scale(.82)}to{opacity:1;transform:none}}
+.hbloom{transform-box:fill-box;transform-origin:center;animation:hbSway 6s ease-in-out infinite}
+.hbloom:nth-child(odd){animation-duration:7.5s;animation-delay:.8s}
+.hbloom:nth-child(3n){animation-duration:5.5s;animation-delay:1.6s}
+@keyframes hbSway{0%,100%{transform:rotate(-3deg) scale(1)}50%{transform:rotate(3deg) scale(1.04)}}
+
+/* gold seam divider replacing the old floral-divider column */
+.hero-seam{width:2px;background:linear-gradient(to bottom,transparent,var(--gold) 15%,var(--gold-soft) 50%,var(--gold) 85%,transparent);opacity:.7;flex-shrink:0;animation:seamIn 1.4s 1.2s var(--ease) both}
+@keyframes seamIn{from{opacity:0;transform:scaleY(0)}}
 
 .tag{font-family:'Cinzel',serif;letter-spacing:.4em;text-transform:uppercase;font-size:.82rem;opacity:.85;margin-bottom:10px;position:relative}
 .half .name{font-size:clamp(4rem,10vw,7.5rem);line-height:1;position:relative;animation:rise 1.6s .8s var(--ease) both}
@@ -133,20 +145,6 @@ section{position:relative;max-width:1000px;margin:0 auto;padding:90px 22px;text-
 @keyframes rise{from{opacity:0;transform:translateY(30px);letter-spacing:.2em}}
 .fam{margin-top:12px;font-size:.95rem;opacity:.85;position:relative;max-width:240px;line-height:1.5}
 
-/* floral stem divider — replaces old circle knot */
-.floral-divider{position:relative;width:64px;z-index:4;display:flex;align-items:stretch;justify-content:center;
-  animation:floralDividerIn 1.6s 1s var(--ease) both;flex-shrink:0;background:transparent}
-@keyframes floralDividerIn{from{opacity:0;transform:scaleY(.7) translateY(20px)}}
-.floral-stem-svg{width:100%;height:100%;overflow:visible;
-  filter:drop-shadow(0 6px 12px rgba(94,6,21,.3)) drop-shadow(0 2px 4px rgba(94,6,21,.15))}
-.bloom{transform-box:fill-box;transform-origin:center}
-.bloom-top{animation:bloomSway 6s 0s ease-in-out infinite}
-.bloom-mid{animation:bloomSway 7s 1.2s ease-in-out infinite}
-.bloom-bot{animation:bloomSway 5.5s 2.4s ease-in-out infinite}
-.bloom-bud{animation:bloomSway 8s 0.6s ease-in-out infinite}
-.stem-main{stroke-dasharray:600;stroke-dashoffset:600;animation:stemDraw 1.8s 1s ease forwards}
-@keyframes stemDraw{to{stroke-dashoffset:0}}
-@keyframes bloomSway{0%,100%{transform:rotate(-4deg) scale(1)}50%{transform:rotate(4deg) scale(1.05)}}
 
 .banner{padding:70px 22px 90px;background:var(--ivory);position:relative}
 .banner::before{content:"";position:absolute;top:-22px;left:0;right:0;height:44px;
@@ -228,9 +226,8 @@ footer .pin{font-size:2.8rem;color:var(--red)}
   .half.bride::after,.half.groom::after{display:none}
   .half.groom{padding-bottom:52px}
   .half .name{font-size:clamp(3.6rem,16vw,5.5rem)}
-  .floral-divider{width:100%;height:100px;flex-direction:row}
-  .floral-stem-svg{width:auto;height:100px;transform:rotate(90deg);transform-origin:center}
-  .hero-corner-tl,.hero-corner-tr{width:clamp(90px,28vw,130px);height:clamp(90px,28vw,130px)}
+  .hero-seam{display:none}
+  .hf{max-width:55vw}
   .banner{padding:62px 20px 78px}
   .grid{grid-template-columns:1fr}
   .timer{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));max-width:290px;margin-inline:auto}
