@@ -2,16 +2,16 @@
    EDIT YOUR DETAILS HERE
    ===================================================== */
 const INVITE = {
-  bride: "Bride Name",
-  groom: "Groom Name",
-  brideParents: "Daughter of Mr. & Mrs. Bride's Parents",
-  groomParents: "Son of Mr. & Mrs. Groom's Parents",
-  dateISO: "2026-12-13T18:00:00",
-  dateText: "Sunday, 13th December 2026",
+  bride: "Syeda Ansharah Shoaib",
+  groom: "Hamza Shakeel",
+  brideParents: "Daughter of late Hafiz Syed Muhammad Shoaib",
+  groomParents: "Son of Abdul Shakeel",
+  dateISO: "2026-11-13T18:00:00",
+  dateText: "Friday, 13th November 2026",
   timeText: "6:00 PM",
-  venue: "Venue Name",
-  address: "Street address, City",
-  mapLink: "https://maps.google.com",
+  venue: "Shayan Banquet & Lawn",
+  address: "PAF Plot #2, Shaheed-e-Millat Flyover, Baloch Colony, Karachi-75350. Cell: 0300-2033224",
+  mapLink: "https://maps.app.goo.gl/XuwAqfj7vmtuDHSUA?g_st=aw",
   rsvpNote: "Kindly let us know you're joining the baraat",
   rsvpWhatsApp: "923000000000",
   schedule: [
@@ -57,7 +57,7 @@ function openInvite() {
     document.body.classList.remove("locked");
     window.scrollTo(0, 0);
     reveal();
-  }, matchMedia("(prefers-reduced-motion: reduce)").matches ? 100 : 1600);
+  }, matchMedia("(prefers-reduced-motion: reduce)").matches ? 100 : 2550);
 }
 envelope.addEventListener("click", openInvite);
 
