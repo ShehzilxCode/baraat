@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2b030a"/>
+      <stop offset="100%" stop-color="#8b1025"/>
+    </linearGradient>
+    <linearGradient id="envBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff8e9"/>
+      <stop offset="100%" stop-color="#e4c38c"/>
+    </linearGradient>
+    <linearGradient id="flap" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff8e8"/>
+      <stop offset="60%" stop-color="#ecd19d"/>
+      <stop offset="100%" stop-color="#d4aa66"/>
+    </linearGradient>
+    <radialGradient id="sealGrad" cx="35%" cy="28%" r="65%">
+      <stop offset="0%" stop-color="#e54459"/>
+      <stop offset="100%" stop-color="#6c0718"/>
+    </radialGradient>
+    <radialGradient id="aura" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(255,235,183,.15)"/>
+      <stop offset="100%" stop-color="rgba(255,235,183,0)"/>
+    </radialGradient>
+  </defs>
+
+  <!-- background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <ellipse cx="600" cy="315" rx="580" ry="340" fill="url(#aura)"/>
+
+  <!-- border -->
+  <rect x="22" y="22" width="1156" height="586" rx="4" fill="none" stroke="rgba(215,169,73,.38)" stroke-width="1.5"/>
+  <rect x="32" y="32" width="1136" height="566" rx="2" fill="none" stroke="rgba(215,169,73,.18)" stroke-width="1"/>
+
+  <!-- ENVELOPE body — bigger, more vertical space -->
+  <rect x="180" y="80" width="840" height="480" rx="6" fill="url(#envBody)" filter="drop-shadow(0 24px 48px rgba(0,0,0,.5))"/>
+
+  <!-- bottom-left triangle -->
+  <polygon points="180,560 600,370 180,370" fill="#d8ae68" opacity=".52"/>
+  <!-- bottom-right triangle -->
+  <polygon points="1020,560 600,370 1020,370" fill="#e2c184" opacity=".48"/>
+  <!-- bottom flap V -->
+  <polygon points="180,560 600,400 1020,560" fill="#c9a24b" opacity=".68"/>
+
+  <!-- FLAP (top triangle, closed) -->
+  <polygon points="180,80 1020,80 600,330" fill="url(#flap)" filter="drop-shadow(0 6px 8px rgba(75,24,4,.2))"/>
+  <line x1="180" y1="80" x2="600" y2="330" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
+  <line x1="1020" y1="80" x2="600" y2="330" stroke="rgba(255,255,255,.14)" stroke-width="1"/>
+
+  <!-- inner letter -->
+  <rect x="215" y="100" width="770" height="360" rx="4" fill="#fffdf7" opacity=".93"/>
+  <rect x="222" y="107" width="756" height="346" rx="3" fill="none" stroke="#d7a949" stroke-width="1.5" opacity=".55"/>
+
+  <!-- letter text -->
+  <text x="600" y="178" text-anchor="middle" font-family="Georgia, serif" font-size="14" letter-spacing="5" fill="#9b0f26" opacity=".7">YOU ARE INVITED TO THE</text>
+  <text x="600" y="272" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="72" fill="#5e0615" font-style="italic">Baraat</text>
+  <text x="600" y="320" text-anchor="middle" font-family="Georgia, serif" font-size="14" letter-spacing="4" fill="#89652a" opacity=".82">Syeda Ansharah &amp; Hamza Shakeel</text>
+  <text x="600" y="348" text-anchor="middle" font-family="Georgia, serif" font-size="12" letter-spacing="3" fill="#9b0f26" opacity=".6">Friday, 13th November 2026</text>
+
+  <!-- RIBBON — sits below the letter text, near bottom of envelope -->
+  <rect x="180" y="430" width="840" height="34" fill="#b71d37" opacity=".92"/>
+  <!-- ribbon sheen -->
+  <rect x="180" y="434" width="840" height="8" fill="rgba(255,255,255,.16)"/>
+  <rect x="180" y="458" width="840" height="4" fill="rgba(0,0,0,.08)"/>
+  <!-- ribbon border lines -->
+  <line x1="180" y1="430" x2="1020" y2="430" stroke="rgba(255,200,180,.2)" stroke-width="1"/>
+  <line x1="180" y1="464" x2="1020" y2="464" stroke="rgba(0,0,0,.1)" stroke-width="1"/>
+
+  <!-- BOW left loop -->
+  <ellipse cx="532" cy="447" rx="62" ry="36" fill="#b71d37" transform="rotate(-14,532,447)" filter="drop-shadow(0 5px 10px rgba(64,5,14,.35))"/>
+  <ellipse cx="532" cy="447" rx="44" ry="22" fill="#8c0c23" transform="rotate(-14,532,447)" opacity=".55"/>
+  <ellipse cx="532" cy="447" rx="28" ry="12" fill="rgba(0,0,0,.12)" transform="rotate(-14,532,447)"/>
+  <!-- BOW right loop -->
+  <ellipse cx="668" cy="447" rx="62" ry="36" fill="#b71d37" transform="rotate(14,668,447)" filter="drop-shadow(0 5px 10px rgba(64,5,14,.35))"/>
+  <ellipse cx="668" cy="447" rx="44" ry="22" fill="#8c0c23" transform="rotate(14,668,447)" opacity=".55"/>
+  <ellipse cx="668" cy="447" rx="28" ry="12" fill="rgba(0,0,0,.12)" transform="rotate(14,668,447)"/>
+  <!-- bow tails -->
+  <polygon points="570,464 548,510 600,490 652,510 630,464" fill="#9b0f26" opacity=".75"/>
+  <!-- bow knot center -->
+  <ellipse cx="600" cy="447" rx="26" ry="20" fill="#d3213f"/>
+  <ellipse cx="600" cy="447" rx="16" ry="11" fill="#e04060" opacity=".65"/>
+  <ellipse cx="600" cy="447" rx="8" ry="5" fill="rgba(255,255,255,.12)"/>
+
+  <!-- WAX SEAL on ribbon center -->
+  <circle cx="600" cy="447" r="36" fill="url(#sealGrad)" filter="drop-shadow(0 6px 14px rgba(43,3,10,.55))"/>
+  <circle cx="600" cy="447" r="32" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="1.5"/>
+  <circle cx="600" cy="447" r="27" fill="none" stroke="rgba(246,215,127,.65)" stroke-width="1"/>
+  <text x="600" y="455" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#fff4ce" font-weight="bold">B</text>
+
+  <!-- footer -->
+  <text x="600" y="600" text-anchor="middle" font-family="Georgia, serif" font-size="13" letter-spacing="6" fill="rgba(215,169,73,.75)">A WEDDING INVITATION</text>
+  <line x1="380" y1="610" x2="820" y2="610" stroke="rgba(215,169,73,.3)" stroke-width="1"/>
+</svg>
