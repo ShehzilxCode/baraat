@@ -15,10 +15,10 @@
     rsvpNote: "Kindly let us know you're joining the baraat",
     rsvpWhatsApp: "923000000000",
     schedule: [
-      { t: "6:00 PM", h: "Baraat Arrival", p: "The groom's procession arrives with dhol and dance." },
-      { t: "7:00 PM", h: "Welcome & Milni", p: "Families greet each other with warmth." },
-      { t: "8:00 PM", h: "Dinner", p: "A grand feast for all our guests." },
-      { t: "10:00 PM", h: "Rukhsati", p: "A tearful, beautiful farewell." }
+      { t: "8:00 PM", h: "Baraat Arrival", p: "The groom's procession arrives with dhol and dance." },
+      { t: "9:00 PM", h: "Welcome & Milni", p: "Families greet each other with warmth." },
+      { t: "10:00 PM", h: "Dinner", p: "A grand feast for all our guests." },
+      { t: "11:30 PM", h: "Rukhsati", p: "A tearful, beautiful farewell." }
     ]
   };
   
