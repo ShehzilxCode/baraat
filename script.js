@@ -63,6 +63,10 @@
       $("intro").classList.add("gone");
       document.body.classList.remove("locked");
       window.scrollTo(0, 0);
+      const audio = new Audio("assets/baraat.mp3");
+      audio.loop = true;
+      audio.volume = 0.7;
+      audio.play().catch(() => {});
       reveal();
     }, matchMedia("(prefers-reduced-motion: reduce)").matches ? 100 : 2550);
   }
