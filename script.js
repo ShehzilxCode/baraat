@@ -8,7 +8,7 @@
     groomParents: "Son of Abdul Shakeel",
     dateISO: "2026-11-13T18:00:00",
     dateText: "Friday, 13th November 2026",
-    timeText: "6:00 PM",
+    timeText: "8:00 PM",
     venue: "Shayan Banquet & Lawn",
     address: "PAF Plot #2, Shaheed-e-Millat Flyover, Baloch Colony, Karachi-75350.",
     mapLink: "https://maps.app.goo.gl/XuwAqfj7vmtuDHSUA?g_st=aw",
@@ -35,10 +35,17 @@
   $("d-time").textContent = INVITE.timeText;
   $("d-venue").textContent = INVITE.venue;
   $("d-address").textContent = INVITE.address;
-  $("map-btn").href = INVITE.mapLink;
+  // Map embed — build iframe src from venue+address, link goes to original mapLink
+  (function(){
+    const wrap = document.getElementById("map-wrap");
+    const frame = document.getElementById("map-frame");
+    if (!wrap || !frame) return;
+    const q = encodeURIComponent(INVITE.venue + " " + INVITE.address);
+    frame.src = "https://maps.google.com/maps?q=" + q + "&output=embed&z=16";
+    wrap.href = INVITE.mapLink;
+  })();
   $("rsvp-note").textContent = INVITE.rsvpNote;
   $("foot-names").textContent = `${INVITE.bride} & ${INVITE.groom}`;
-  $("rsvp-btn").href = `https://wa.me/${INVITE.rsvpWhatsApp}?text=${encodeURIComponent("Assalamu Alaikum! We will be joining the Baraat. ")}`;
   
   $("timeline").innerHTML = INVITE.schedule
     .map(e => `<li><time>${e.t}</time><h5>${e.h}</h5><p>${e.p}</p></li>`).join("");
